@@ -6,7 +6,6 @@ from PIL import ImageTk, Image
 import http.client
 import json
 import simplejson
-import time
 
 
 def get_catalog():
@@ -201,7 +200,7 @@ def tags_screen(root, im_file):
 
 def catalog_screen(root, selected, tags, im_file):
     clear_window(root)
-    transactions = get_transactions(cache=True)
+    transactions = get_transactions(cache=False)
     valid_ids = set()
     for transaction in transactions['transactions']:
         for t in transaction:
@@ -278,4 +277,4 @@ def main(im_file):
 
 
 if __name__ == '__main__':
-    main(im_file='fruit_display.jpg')
+    main(im_file='milk_display.jpg')
